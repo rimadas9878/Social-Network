@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const {User, Thought} = require('../models');
 
 module.exports = {
 
@@ -12,6 +12,7 @@ module.exports = {
     //get all users
     getUsers(req, res) {
         User.find()
+            .select('-__v')
             .then((dbUserData) => res.json(dbUserData))
             .catch((err) => res.status(500).json(err));
     },
@@ -23,7 +24,7 @@ module.exports = {
             .then((dbUserData) =>
                 !dbUserData
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json(user)
+                    : res.json(dbUserData)
             )
             .catch((err) => res.status(500).json(err));
     },
