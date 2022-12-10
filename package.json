@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/rimadas9878/Social-Network/issues"
   },
-  "homepage": "https://github.com/rimadas9878/Social-Network#readme"
+  "homepage": "https://github.com/rimadas9878/Social-Network#readme",
+  "dependencies": {
+    "mongoose": "^6.8.0"
+  }
 }
